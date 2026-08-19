@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 Route::get('/', function () {
@@ -8,4 +9,4 @@ Route::get('/', function () {
 })->name('welcome');
 */
 
-Route::get('/', [PageController::class, 'welcome'])->name('welcome');
+Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
