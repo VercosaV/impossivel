@@ -9,6 +9,7 @@
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "env": {
+        "VERCEL": "true",
         "LOG_CHANNEL": "stderr",
         "CACHE_DRIVER": "array",
         "SESSION_DRIVER": "cookie",
