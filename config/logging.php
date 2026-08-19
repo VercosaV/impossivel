@@ -60,7 +60,10 @@ return [
 
         'single' => [
             'driver' => 'single',
-            'path' => env('VERCEL') ? '/tmp/laravel.log' : storage_path('logs/laravel.log'),
+            'path' => (function () {
+            $logPath = storage_path('logs/laravel.log');
+            return is_writable(dirname($logPath)) ? $logPath : '/tmp/laravel.log';
+            })(),
             'level' => env('LOG_LEVEL', 'debug'),
             'replace_placeholders' => true,
         ],
