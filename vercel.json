@@ -10,7 +10,7 @@
     ],
     "env": {
         "VERCEL": "true",
-        "LOG_CHANNEL": "stderr",
+        "LOG_CHANNEL": "errorlog",
         "CACHE_DRIVER": "array",
         "SESSION_DRIVER": "cookie",
         "VIEW_COMPILED_PATH": "/tmp",

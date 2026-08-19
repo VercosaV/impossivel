@@ -134,7 +134,7 @@ return [
         ],
 
         'emergency' => [
-            'path' => storage_path('logs/laravel.log'),
+            'path' => env('VERCEL') ? '/tmp/laravel.log' : storage_path('logs/laravel.log'),
         ],
 
     ],
