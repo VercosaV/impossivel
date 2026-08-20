@@ -24,13 +24,24 @@ class UserController extends Controller
             'password' => 'required|string|min:3',
         ]);
 
+                /*
         // Criação usando Eloquent ORM
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password), // Criptografa a senha
         ]);
+        */
 
-        return redirect()->back()->with('sucesso', 'Usuário cadastrado com sucesso!');
+        $usuario = new User();
+
+        $usuario->name = $request->input('name');
+        $usuario->email = $request->input('email');
+        $usuario->password = Hash::make($request->input('password'));
+
+        $usuario->save();
+
+        return redirect()->route('usuarios.create')->with('sucesso', 'Usuário salvo com sucesso!');
+        //return redirect()->back()->with('sucesso', 'Usuário cadastrado com sucesso!');
     }
 }
