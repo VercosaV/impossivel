@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WellcomeController;
 
 /*
 Route::get('/', function () {
@@ -9,4 +10,6 @@ Route::get('/', function () {
 })->name('welcome');
 */
 
-Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
+Route::get('/', [WellcomeController::class, 'welcome'])->name('welcome');
+
+Route::get('/home', [HomeController::class, 'home'])->name('home');
